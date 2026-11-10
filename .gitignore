@@ -1,0 +1,30 @@
+# Environment variables
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+env/
+venv/
+
+# Node & Angular
+node_modules/
+dist/
+.angular/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Independent Git Repositories
+/impulsetech-be/
+/impulsetech-fe/
+/impulsetech-migration/
