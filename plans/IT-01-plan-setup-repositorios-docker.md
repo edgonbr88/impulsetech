@@ -113,9 +113,9 @@ ImpulseTech requiere una infraestructura de desarrollo local estandarizada, repr
 - [x] Levantar el entorno con `docker compose up -d` y esperar healthchecks.
 - [x] Validar endpoints y respuestas de cada servicio.
 - [x] Generar el Plan de Pruebas en `test/IT-01-test-plan-setup-repositorios-docker.md`.
-- [ ] Crear ramas `feature/IT-01-setup-repos-docker` en los repositorios, hacer commit y push a GitHub.
-- [ ] Crear Pull Requests hacia `main` en GitHub.
-- [ ] Mover tarjeta en Trello a `in testing` mediante script auxiliar.
+- [x] Crear ramas `feature/IT-01-setup-repos-docker` en los repositorios, hacer commit y push a GitHub.
+- [x] Crear Pull Requests hacia `main` en GitHub.
+- [x] Mover tarjeta en Trello a `in testing` mediante script auxiliar.
 
 ---
 
@@ -126,4 +126,4 @@ ImpulseTech requiere una infraestructura de desarrollo local estandarizada, repr
 - [x] Frontend Angular responde en `http://localhost:4200`.
 - [x] Contenedor PostgreSQL 16 listo y accesible en puerto 5433 (host) / 5432 (interno).
 - [x] Plan de pruebas generado y documentado en `test/`.
-- [ ] PRs creados en GitHub y tarjeta en Trello movida a `in testing`.
+- [x] PRs creados en GitHub y tarjeta en Trello movida a `in testing`.
