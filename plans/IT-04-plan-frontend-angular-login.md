@@ -106,9 +106,9 @@ La experiencia de inicio de sesión debe reflejar seriedad corporativa, integran
 - [x] Validar compilación con `docker compose exec frontend npm run build`.
 - [x] Probar flujo completo de login, guard y logout en el navegador.
 - [x] Generar Plan de Pruebas en `test/IT-04-test-plan-frontend-angular-login.md`.
-- [ ] Crear ramas `feature/IT-04-frontend-angular-login`, commit y push a GitHub.
-- [ ] Crear Pull Requests en GitHub para `impulsetech-fe` e `impulsetech`.
-- [ ] Mover tarjeta en Trello a `in testing` con el reporte final.
+- [x] Crear ramas `feature/IT-04-frontend-angular-login`, commit y push a GitHub.
+- [x] Crear Pull Requests en GitHub para `impulsetech-fe` e `impulsetech`.
+- [x] Mover tarjeta en Trello a `in testing` con el reporte final.
 
 ---
 
@@ -120,4 +120,4 @@ La experiencia de inicio de sesión debe reflejar seriedad corporativa, integran
 - [x] Interceptor inyectando header `Authorization: Bearer <TOKEN>` en peticiones protegidas.
 - [x] Separación estricta de plantillas `.component.html` en todos los componentes creados.
 - [x] Plan de pruebas documentado en `test/IT-04-test-plan-frontend-angular-login.md`.
-- [ ] PRs creados en GitHub y tarjeta en Trello movida a `in testing`.
+- [x] PRs creados en GitHub y tarjeta en Trello movida a `in testing`.
