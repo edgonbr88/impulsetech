@@ -136,9 +136,9 @@ class Usuario(Base):
 - [x] Ejecutar `pytest` dentro del contenedor backend y asegurar 100% de tests en verde.
 - [x] Probar endpoints manualmente con `curl` verificando emisión y validación de tokens.
 - [x] Generar Plan de Pruebas en `test/IT-03-test-plan-backend-auth-jwt-usuarios.md`.
-- [ ] Crear rama `feature/IT-03-backend-auth-jwt-usuarios`, hacer commit y push a GitHub.
-- [ ] Crear Pull Requests en GitHub para `impulsetech-be` e `impulsetech`.
-- [ ] Mover tarjeta en Trello a `in testing` con el reporte final.
+- [x] Crear rama `feature/IT-03-backend-auth-jwt-usuarios`, hacer commit y push a GitHub.
+- [x] Crear Pull Requests en GitHub para `impulsetech-be` e `impulsetech`.
+- [x] Mover tarjeta en Trello a `in testing` con el reporte final.
 
 ---
 
@@ -149,4 +149,4 @@ class Usuario(Base):
 - [x] Endpoints protegidos rechazan peticiones sin header `Authorization: Bearer <token>`.
 - [x] Listado de ejecutivos (`/api/v1/users/ejecutivos`) responde correctamente.
 - [x] Documentación interactiva Swagger en `/docs` refleja los nuevos endpoints y el esquema de seguridad Bearer.
-- [ ] PRs generados y tarjeta en Trello movida a `in testing`.
+- [x] PRs generados y tarjeta en Trello movida a `in testing`.
