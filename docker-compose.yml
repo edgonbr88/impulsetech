@@ -1,0 +1,71 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: impulsetech-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-impulsetech}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-impulsetech_secure_pass_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-impulsetech_dev}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-impulsetech} -d ${POSTGRES_DB:-impulsetech_dev}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  migration:
+    image: amacneil/dbmate:2.15
+    container_name: impulsetech-migration
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://impulsetech:impulsetech_secure_pass_2026@postgres:5432/impulsetech_dev?sslmode=disable}
+    volumes:
+      - ./impulsetech-migration/db:/db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: wait
+    restart: "no"
+
+  backend:
+    build:
+      context: ./impulsetech-be
+      dockerfile: Dockerfile
+    container_name: impulsetech-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-impulsetech}:${POSTGRES_PASSWORD:-impulsetech_secure_pass_2026}@postgres:5432/${POSTGRES_DB:-impulsetech_dev}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-impulsetech_super_secret_jwt_key_2026_dev_environment_at_least_32_bytes_long}
+      ALGORITHM: ${ALGORITHM:-HS256}
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    volumes:
+      - ./impulsetech-be:/app
+      - /app/__pycache__
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./impulsetech-fe
+      dockerfile: Dockerfile
+    container_name: impulsetech-frontend
+    restart: unless-stopped
+    environment:
+      API_BASE_URL: ${API_BASE_URL:-http://localhost:8000/api/v1}
+    ports:
+      - "${FRONTEND_PORT:-4200}:4200"
+    volumes:
+      - ./impulsetech-fe:/app
+      - /app/node_modules
+      - /app/.angular
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
