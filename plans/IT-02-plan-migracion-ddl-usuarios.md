@@ -122,9 +122,9 @@ DROP TYPE IF EXISTS rol_usuario_enum;
 - [x] Validar el trigger de actualización de `updated_at`.
 - [x] Validar la reversibilidad completa (`dbmate rollback` seguido de `dbmate up`).
 - [x] Generar el Plan de Pruebas en `test/IT-02-test-plan-migracion-ddl-usuarios.md`.
-- [ ] Crear rama `feature/IT-02-migracion-ddl-usuarios`, hacer commit y push a GitHub.
-- [ ] Crear Pull Request en GitHub para `impulsetech-migration` y `impulsetech`.
-- [ ] Mover tarjeta en Trello a `in testing` con el resumen de la ejecución.
+- [x] Crear rama `feature/IT-02-migracion-ddl-usuarios`, hacer commit y push a GitHub.
+- [x] Crear Pull Request en GitHub para `impulsetech-migration` y `impulsetech`.
+- [x] Mover tarjeta en Trello a `in testing` con el resumen de la ejecución.
 
 ---
 
@@ -134,4 +134,4 @@ DROP TYPE IF EXISTS rol_usuario_enum;
 - [x] Usuario Administrador semilla disponible con hash bcrypt válido.
 - [x] Rollback probado y validado.
 - [x] Documento de pruebas registrado en `test/IT-02-test-plan-migracion-ddl-usuarios.md`.
-- [ ] Tarjeta en Trello movida a `in testing`.
+- [x] Tarjeta en Trello movida a `in testing`.
